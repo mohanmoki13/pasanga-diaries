@@ -3,99 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <title>Pasanga Diaries</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
       color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
+      background: #0f2027;
       overflow: hidden;
+      position: relative;
+    }
+
+    .wave-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .container {
+      text-align: center;
+      padding: 80px 20px 60px;
     }
 
     .logo {
-      margin-top: 20px;
       width: 100px;
-      height: auto;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     h1 {
-      font-size: 2.5em;
-      margin: 0.5em 0;
+      font-size: 3em;
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     p {
       max-width: 600px;
-      margin: 1em auto;
-      font-size: 1.1em;
+      margin: 20px auto;
+      font-size: 1.2em;
       line-height: 1.6;
     }
 
-    .buttons {
-      margin: 20px;
-    }
-
     .buttons a {
-      padding: 10px 20px;
-      margin: 10px;
+      padding: 12px 24px;
+      margin: 12px;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 30px;
       font-weight: bold;
       display: inline-block;
+      transition: background 0.3s, transform 0.2s;
     }
 
     .youtube-btn {
-      background-color: #ff0000;
+      background: #ff0000;
     }
 
     .facebook-btn {
-      background-color: #3b5998;
+      background: #3b5998;
+    }
+
+    .buttons a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
 
     .contact {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 15px;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .animated-boy {
       position: absolute;
       bottom: 10px;
-      width: 120px;
-      height: auto;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+      opacity: 0.7;
     }
 
-    .left-boy {
-      left: 10px;
-    }
-
-    .right-boy {
-      right: 10px;
-      transform: scaleX(-1); /* flip to face left */
+    .mouse-light {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 80%);
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      transition: transform 0.05s ease;
     }
   </style>
 </head>
 <body>
-  <img src="logo.jpg" alt="Pasanga Diaries Logo" class="logo">
-
-  <h1>Pasanga Diaries</h1>
-  <p>
-    Welcome to Pasanga Diaries — Our source for fun, laughter, festivals, food, and real stories!<br>
-    We're a vibrant crew capturing raw, interesting moments from local life in Tamil Nadu. Join our journey through city streets, temples, and tasty treats.
-  </p>
-
-  <div class="buttons">
-    <a class="youtube-btn" href="https://www.youtube.com/@PasangaDiaries" target="_blank">Subscribe on YouTube</a>
-    <a class="facebook-btn" href="https://www.facebook.com/share/1ChFrzeBzM/" target="_blank">Follow on Facebook</a>
-  </div>
-
- 
-  <div class="contact">
-    Contact us: pasangadiaries@gmail.com
-  </div>
-</body>
-</html>
+  <svg class="wave-background" viewBox="0 0 1440 320">
+    <path fill="#2c5364" fill-opacity="1" d="M0,64L30,85.3C60,107,120,149,180,170.7C240,192,300,192,360,170.7C420,149,480,107,540,106.7C600,107,660,149,720,186.7C780,224,840,256,900,256C960,256,1020,224,1080,186.7C1140,149,1200,107,1260,90.7C1320,75,1380,85,1410,90.7L1440,96L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120
