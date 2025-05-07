@@ -8,53 +8,73 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffe4c4, #fefbd8);
-      color: #333;
+      background: #0f2027; /* dark gradient */
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
       text-align: center;
-      padding: 0;
+      overflow-x: hidden;
     }
     header {
-      background-color: #2c3e50;
-      padding: 20px 0;
-      color: white;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 32px;
+      padding: 30px 20px 10px;
     }
     .logo {
-      width: 120px;
+      width: 100px;
       border-radius: 50%;
-      margin-top: 10px;
+      box-shadow: 0 0 15px #00e6e6;
     }
-    .content {
-      padding: 30px 20px;
+    h1 {
+      font-size: 36px;
+      margin-top: 15px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00e6e6;
     }
     .description {
-      max-width: 700px;
-      margin: 0 auto 30px auto;
+      max-width: 800px;
+      margin: 30px auto;
       font-size: 18px;
-      line-height: 1.6;
+      line-height: 1.8;
+      padding: 0 20px;
+      color: #e0f7fa;
     }
     .buttons a {
       display: inline-block;
       margin: 10px;
-      padding: 12px 25px;
-      border-radius: 8px;
+      padding: 12px 24px;
+      border-radius: 30px;
       text-decoration: none;
       color: white;
       font-weight: bold;
-      transition: background 0.3s;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      box-shadow: 0 0 12px #ff416c;
+      transition: 0.3s ease-in-out;
     }
-    .youtube { background: #ff0000; }
-    .youtube:hover { background: #cc0000; }
-    .facebook { background: #3b5998; }
-    .facebook:hover { background: #2d4373; }
+    .buttons a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ff4b2b;
+    }
+
     footer {
-      background: #2c3e50;
-      color: white;
-      padding: 15px 0;
-      margin-top: 40px;
+      position: relative;
+      background: #111;
+      color: #aaa;
+      padding: 40px 20px 60px;
+      margin-top: 50px;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 80px;
+      width: 100%;
+      background: url('https://svgshare.com/i/xsV.svg') repeat-x;
+      background-size: cover;
+      animation: waveAnim 8s linear infinite;
+    }
+
+    @keyframes waveAnim {
+      0% { background-position-x: 0; }
+      100% { background-position-x: 1600px; }
     }
   </style>
 </head>
@@ -65,19 +85,18 @@
     <h1>Pasanga Diaries</h1>
   </header>
 
-  <div class="content">
-    <p class="description">
-      Welcome to Pasanga Diaries — Our source for fun, laughter, festivals, food, and real stories! We're a vibrant crew capturing raw, interesting moments from local life in Tamil Nadu. Join our journey through city streets, temples, and tasty treats.
-    </p>
+  <div class="description">
+    Welcome to Pasanga Diaries — a vibrant space for fun, real-life stories, spiritual moments, street food, and celebration vlogs from Tamil Nadu. Join us for exciting and entertaining videos, and become part of our digital gang!
+  </div>
 
-    <div class="buttons">
-      <a href="https://youtube.com/@pasangadiaries" class="youtube" target="_blank">Subscribe on YouTube</a>
-      <a href="https:www.facebook.com/share/1ChFrzeBzM/" class="facebook" target="_blank">Follow on Facebook</a>
-    </div>
+  <div class="buttons">
+    <a href="https://youtube.com/@pasangadiaries" target="_blank">Subscribe on YouTube</a>
+    <a href="https://facebook.com/yourusername" target="_blank">Follow on Facebook</a>
   </div>
 
   <footer>
     Contact us: pasangadiaries@gmail.com
+    <div class="wave"></div>
   </footer>
 
 </body>
