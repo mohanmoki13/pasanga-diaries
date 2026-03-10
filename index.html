@@ -66,43 +66,30 @@ background:#1877f2;
 transform:scale(1.1);
 }
 
-/* VIDEO SLIDER */
+/* VIDEO SECTION */
 
 .video-section{
 margin-top:40px;
 padding:20px;
+text-align:center;
+}
+
+.video-section h2{
+margin-bottom:20px;
 }
 
 .slider{
 display:flex;
-overflow:hidden;
-position:relative;
+justify-content:center;
 }
 
-.slide-track{
-display:flex;
-animation:scroll 40s linear infinite;
-}
-
-.slide{
-min-width:320px;
-margin:10px;
-}
-
-.slide iframe{
-width:320px;
-height:180px;
-border-radius:10px;
+.slider iframe{
+width:90%;
+max-width:900px;
+height:400px;
 border:none;
-}
-
-@keyframes scroll{
-0%{
-transform:translateX(0);
-}
-100%{
-transform:translateX(-100%);
-}
+border-radius:12px;
+box-shadow:0 0 20px black;
 }
 
 /* footer */
@@ -126,7 +113,7 @@ margin-top:20px;
 <h1>Pasanga Diaries</h1>
 
 <p>
-Welcome to Pasanga Diaries — Your source for fun, laughter, festivals, food, and real stories!  
+Welcome to Pasanga Diaries — Your source for fun, laughter, festivals, food, and real stories!
 Join our journey through city streets, temples, and tasty treats.
 </p>
 
@@ -149,35 +136,19 @@ Follow on Facebook
 </div>
 
 
-<!-- VIDEO SLIDER -->
+<!-- YOUTUBE VIDEOS -->
 
 <div class="video-section">
 
+<h2>Latest Videos</h2>
+
 <div class="slider">
 
-<div class="slide-track">
-
-<div class="slide">
-<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&autoplay=1&mute=1"></iframe>
-</div>
-
-<div class="slide">
-<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&mute=1"></iframe>
-</div>
-
-<div class="slide">
-<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&mute=1"></iframe>
-</div>
-
-<div class="slide">
-<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&mute=1"></iframe>
-</div>
-
-<div class="slide">
-<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&mute=1"></iframe>
-</div>
-
-</div>
+<iframe
+src="https://www.youtube.com/embed/videoseries?list=UU"
+allow="autoplay"
+allowfullscreen>
+</iframe>
 
 </div>
 
