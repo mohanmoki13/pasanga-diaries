@@ -1,145 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pasanga Diaries</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: white;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<title>Pasanga Diaries</title>
 
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.1), transparent 80%);
-      transition: background 0.1s;
-      z-index: 0;
-    }
+<style>
 
-    .container {
-      position: relative;
-      text-align: center;
-      padding: 100px 20px 60px;
-      z-index: 1;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
-    .logo {
-      width: 100px;
-      margin-bottom: 20px;
-    }
+body{
+height:100vh;
+background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c92d2);
+background-size:400% 400%;
+animation:bgMove 12s infinite alternate;
+color:white;
+overflow:hidden;
+}
 
-    h1 {
-      font-size: 3em;
-      margin: 0.2em 0;
-      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
-    }
+@keyframes bgMove{
+0%{background-position:left}
+100%{background-position:right}
+}
 
-    p {
-      max-width: 700px;
-      margin: 0 auto 20px;
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #e0e0e0;
-    }
+/* floating particles */
 
-    .buttons {
-      margin-top: 30px;
-    }
+body::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background-image:radial-gradient(white 1px,transparent 1px);
+background-size:50px 50px;
+opacity:0.2;
+animation:moveStars 60s linear infinite;
+}
 
-    .buttons a {
-      padding: 12px 25px;
-      margin: 10px;
-      border-radius: 25px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s;
-      display: inline-block;
-    }
+@keyframes moveStars{
+from{transform:translateY(0)}
+to{transform:translateY(-1000px)}
+}
 
-    .buttons a:hover {
-      transform: scale(1.05);
-    }
+/* container */
 
-    .youtube-btn {
-      background-color: #ff0000;
-    }
+.container{
+position:relative;
+text-align:center;
+padding-top:120px;
+z-index:2;
+}
 
-    .facebook-btn {
-      background-color: #3b5998;
-    }
+/* logo */
 
-    .contact {
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      padding: 10px;
-      font-size: 0.95em;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 2;
-    }
+.logo{
+width:120px;
+border-radius:50%;
+box-shadow:0 0 20px #00f7ff;
+animation:logoGlow 2s infinite alternate;
+}
 
-    .wave-container {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      z-index: 0;
-    }
+@keyframes logoGlow{
+from{box-shadow:0 0 15px #00f7ff}
+to{box-shadow:0 0 35px #00f7ff}
+}
 
-    svg {
-      display: block;
-      width: 100%;
-      height: 150px;
-    }
-  </style>
+/* title */
+
+h1{
+font-size:3.2em;
+margin-top:20px;
+text-shadow:0 0 10px #00f7ff;
+}
+
+/* subtitle */
+
+p{
+max-width:700px;
+margin:auto;
+margin-top:20px;
+font-size:1.2em;
+line-height:1.6;
+color:#e8e8e8;
+}
+
+/* buttons */
+
+.buttons{
+margin-top:35px;
+}
+
+.buttons a{
+display:inline-block;
+padding:14px 28px;
+margin:10px;
+border-radius:30px;
+font-weight:bold;
+text-decoration:none;
+color:white;
+transition:0.3s;
+letter-spacing:0.5px;
+}
+
+.youtube{
+background:#ff0000;
+box-shadow:0 0 10px #ff0000;
+}
+
+.facebook{
+background:#1877f2;
+box-shadow:0 0 10px #1877f2;
+}
+
+.buttons a:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px white;
+}
+
+/* bottom wave */
+
+.wave{
+position:absolute;
+bottom:0;
+width:100%;
+}
+
+svg{
+width:100%;
+height:160px;
+}
+
+/* footer */
+
+.footer{
+position:fixed;
+bottom:0;
+width:100%;
+text-align:center;
+padding:10px;
+background:rgba(0,0,0,0.4);
+font-size:0.9em;
+z-index:3;
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <img src="logo.jpg" alt="Pasanga Diaries Logo" class="logo">
+<div class="container">
 
-    <h1>Pasanga Diaries</h1>
-    <p>
-      Welcome to Pasanga Diaries — Your source for fun, laughter, festivals, food, and real stories!<br>
-      We're a vibrant crew capturing raw, interesting moments from local life in Tamil Nadu. Join our journey through city streets, temples, and tasty treats.
-    </p>
+<img src="logo.jpg" class="logo">
 
-    <div class="buttons">
-      <a class="youtube-btn" href="https://www.youtube.com/@PasangaDiaries" target="_blank">Subscribe on YouTube</a>
-      <a class="facebook-btn" href="https://www.facebook.com/share/1ChFrzeBzM/" target="_blank">Follow on Facebook</a>
-    </div>
-  </div>
+<h1 id="title"></h1>
 
-  <div class="wave-container">
-    <svg viewBox="0 0 1440 320">
-      <path fill="#ffffff22" fill-opacity="1" d="M0,160L40,165.3C80,171,160,181,240,160C320,139,400,85,480,85.3C560,85,640,139,720,160C800,181,880,171,960,176C1040,181,1120,203,1200,192C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
-    </svg>
-  </div>
+<p>
+Welcome to <b>Pasanga Diaries</b> —  
+Your destination for fun, laughter, festivals, food and real life stories from Tamil Nadu.  
+We capture amazing street moments, temple culture, travel experiences and tasty food journeys.
+</p>
 
-  <div class="contact">
-    Contact us: pasangadiaries@gmail.com
-  </div>
+<div class="buttons">
 
-  <script>
-    // Mouse tracking light effect
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      document.body.style.setProperty('--mouse-x', `${x}%`);
-      document.body.style.setProperty('--mouse-y', `${y}%`);
-    });
-  </script>
+<a class="youtube" href="https://www.youtube.com/@PasangaDiaries" target="_blank">
+Subscribe on YouTube
+</a>
+
+<a class="facebook" href="https://www.facebook.com/share/1ChFrzeBzM/" target="_blank">
+Follow on Facebook
+</a>
+
+</div>
+
+</div>
+
+<div class="wave">
+
+<svg viewBox="0 0 1440 320">
+<path fill="#ffffff22"
+d="M0,192L60,181.3C120,171,240,149,360,160C480,171,600,213,720,224C840,235,960,213,1080,192C1200,171,1320,149,1380,138.7L1440,128V320H0Z">
+</path>
+</svg>
+
+</div>
+
+<div class="footer">
+Contact us : pasangadiaries@gmail.com
+</div>
+
+<script>
+
+/* typing animation */
+
+const text="Pasanga Diaries";
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.getElementById("title").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,120);
+}
+}
+
+typing();
+
+</script>
+
 </body>
 </html>
