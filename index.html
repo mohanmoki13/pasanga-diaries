@@ -6,144 +6,112 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
 body{
-height:100vh;
-background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c92d2);
-background-size:400% 400%;
-animation:bgMove 12s infinite alternate;
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
 color:white;
-overflow:hidden;
+overflow-x:hidden;
 }
-
-@keyframes bgMove{
-0%{background-position:left}
-100%{background-position:right}
-}
-
-/* floating particles */
-
-body::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background-image:radial-gradient(white 1px,transparent 1px);
-background-size:50px 50px;
-opacity:0.2;
-animation:moveStars 60s linear infinite;
-}
-
-@keyframes moveStars{
-from{transform:translateY(0)}
-to{transform:translateY(-1000px)}
-}
-
-/* container */
 
 .container{
-position:relative;
 text-align:center;
-padding-top:120px;
-z-index:2;
+padding:80px 20px 30px;
 }
-
-/* logo */
 
 .logo{
-width:120px;
+width:110px;
 border-radius:50%;
-box-shadow:0 0 20px #00f7ff;
-animation:logoGlow 2s infinite alternate;
+box-shadow:0 0 20px cyan;
 }
-
-@keyframes logoGlow{
-from{box-shadow:0 0 15px #00f7ff}
-to{box-shadow:0 0 35px #00f7ff}
-}
-
-/* title */
 
 h1{
-font-size:3.2em;
-margin-top:20px;
-text-shadow:0 0 10px #00f7ff;
+font-size:40px;
+margin:15px;
+text-shadow:0 0 15px cyan;
 }
-
-/* subtitle */
 
 p{
 max-width:700px;
 margin:auto;
-margin-top:20px;
-font-size:1.2em;
 line-height:1.6;
-color:#e8e8e8;
+font-size:18px;
+color:#ddd;
 }
 
-/* buttons */
-
 .buttons{
-margin-top:35px;
+margin-top:30px;
 }
 
 .buttons a{
-display:inline-block;
-padding:14px 28px;
+padding:12px 25px;
 margin:10px;
-border-radius:30px;
-font-weight:bold;
+border-radius:25px;
 text-decoration:none;
 color:white;
-transition:0.3s;
-letter-spacing:0.5px;
+font-weight:bold;
+display:inline-block;
+transition:.3s;
 }
 
 .youtube{
 background:#ff0000;
-box-shadow:0 0 10px #ff0000;
 }
 
 .facebook{
 background:#1877f2;
-box-shadow:0 0 10px #1877f2;
 }
 
 .buttons a:hover{
 transform:scale(1.1);
-box-shadow:0 0 20px white;
 }
 
-/* bottom wave */
+/* VIDEO SLIDER */
 
-.wave{
-position:absolute;
-bottom:0;
-width:100%;
+.video-section{
+margin-top:40px;
+padding:20px;
 }
 
-svg{
-width:100%;
-height:160px;
+.slider{
+display:flex;
+overflow:hidden;
+position:relative;
+}
+
+.slide-track{
+display:flex;
+animation:scroll 40s linear infinite;
+}
+
+.slide{
+min-width:320px;
+margin:10px;
+}
+
+.slide iframe{
+width:320px;
+height:180px;
+border-radius:10px;
+border:none;
+}
+
+@keyframes scroll{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-100%);
+}
 }
 
 /* footer */
 
 .footer{
-position:fixed;
-bottom:0;
-width:100%;
 text-align:center;
-padding:10px;
-background:rgba(0,0,0,0.4);
-font-size:0.9em;
-z-index:3;
+padding:12px;
+background:rgba(0,0,0,0.5);
+margin-top:20px;
 }
 
 </style>
@@ -155,21 +123,24 @@ z-index:3;
 
 <img src="logo.jpg" class="logo">
 
-<h1 id="title"></h1>
+<h1>Pasanga Diaries</h1>
 
 <p>
-Welcome to <b>Pasanga Diaries</b> —  
-Your destination for fun, laughter, festivals, food and real life stories from Tamil Nadu.  
-We capture amazing street moments, temple culture, travel experiences and tasty food journeys.
+Welcome to Pasanga Diaries — Your source for fun, laughter, festivals, food, and real stories!  
+Join our journey through city streets, temples, and tasty treats.
 </p>
 
 <div class="buttons">
 
-<a class="youtube" href="https://www.youtube.com/@PasangaDiaries" target="_blank">
+<a class="youtube"
+href="https://youtube.com/@pasangadiaries"
+target="_blank">
 Subscribe on YouTube
 </a>
 
-<a class="facebook" href="https://www.facebook.com/share/1ChFrzeBzM/" target="_blank">
+<a class="facebook"
+href="https://www.facebook.com/share/1ChFrzeBzM/"
+target="_blank">
 Follow on Facebook
 </a>
 
@@ -177,38 +148,45 @@ Follow on Facebook
 
 </div>
 
-<div class="wave">
 
-<svg viewBox="0 0 1440 320">
-<path fill="#ffffff22"
-d="M0,192L60,181.3C120,171,240,149,360,160C480,171,600,213,720,224C840,235,960,213,1080,192C1200,171,1320,149,1380,138.7L1440,128V320H0Z">
-</path>
-</svg>
+<!-- VIDEO SLIDER -->
+
+<div class="video-section">
+
+<div class="slider">
+
+<div class="slide-track">
+
+<div class="slide">
+<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&autoplay=1&mute=1"></iframe>
+</div>
+
+<div class="slide">
+<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&mute=1"></iframe>
+</div>
+
+<div class="slide">
+<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&mute=1"></iframe>
+</div>
+
+<div class="slide">
+<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&mute=1"></iframe>
+</div>
+
+<div class="slide">
+<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=PasangaDiaries&mute=1"></iframe>
+</div>
 
 </div>
+
+</div>
+
+</div>
+
 
 <div class="footer">
-Contact us : pasangadiaries@gmail.com
+Contact us: pasangadiaries@gmail.com
 </div>
-
-<script>
-
-/* typing animation */
-
-const text="Pasanga Diaries";
-let i=0;
-
-function typing(){
-if(i<text.length){
-document.getElementById("title").innerHTML+=text.charAt(i);
-i++;
-setTimeout(typing,120);
-}
-}
-
-typing();
-
-</script>
 
 </body>
 </html>
