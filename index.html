@@ -14,13 +14,15 @@ color:white;
 overflow-x:hidden;
 }
 
+/* TOP SECTION */
+
 .container{
 text-align:center;
-padding:80px 20px 30px;
+padding:80px 20px 40px;
 }
 
 .logo{
-width:110px;
+width:120px;
 border-radius:50%;
 box-shadow:0 0 20px cyan;
 }
@@ -66,33 +68,47 @@ background:#1877f2;
 transform:scale(1.1);
 }
 
-/* VIDEO SECTION */
+/* LOGO SLIDER */
 
-.video-section{
-margin-top:40px;
-padding:20px;
-text-align:center;
+.logo-slider{
+margin-top:60px;
+overflow:hidden;
+background:rgba(0,0,0,0.3);
+padding:20px 0;
 }
 
-.video-section h2{
-margin-bottom:20px;
+.slide-track{
+display:flex;
+width:calc(200px * 10);
+animation:scroll 20s linear infinite;
 }
 
-.slider{
+.slide{
+width:200px;
 display:flex;
 justify-content:center;
+align-items:center;
 }
 
-.slider iframe{
-width:90%;
-max-width:900px;
-height:400px;
-border:none;
-border-radius:12px;
-box-shadow:0 0 20px black;
+.slide img{
+width:120px;
+border-radius:50%;
+box-shadow:0 0 15px cyan;
 }
 
-/* footer */
+/* ANIMATION */
+
+@keyframes scroll{
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-1000px);
+}
+}
+
+/* FOOTER */
 
 .footer{
 text-align:center;
@@ -136,19 +152,20 @@ Follow on Facebook
 </div>
 
 
-<!-- YOUTUBE VIDEOS -->
+<!-- LOGO SLIDER -->
 
-<div class="video-section">
+<div class="logo-slider">
 
-<h2>Latest Videos</h2>
+<div class="slide-track">
 
-<div class="slider">
-
-<iframe
-src="https://www.youtube.com/embed/videoseries?list=UU"
-allow="autoplay"
-allowfullscreen>
-</iframe>
+<div class="slide"><img src="logo.jpg"></div>
+<div class="slide"><img src="logo.jpg"></div>
+<div class="slide"><img src="logo.jpg"></div>
+<div class="slide"><img src="logo.jpg"></div>
+<div class="slide"><img src="logo.jpg"></div>
+<div class="slide"><img src="logo.jpg"></div>
+<div class="slide"><img src="logo.jpg"></div>
+<div class="slide"><img src="logo.jpg"></div>
 
 </div>
 
